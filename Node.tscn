@@ -1,0 +1,688 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+[ext_resource path="res://Tiles/tile.res" type="TileSet" id=2]
+[ext_resource path="res://Builds/Casa/Casa.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Jugador/Payer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Builds/Castle/Castle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Graphics/GUI/InfoRecursos/Contenedor_elemento_info.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Graphics/GUI/InfoRecursos/Gente.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Graphics/GUI/InfoRecursos/Piedra.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/GUI/InfoRecursos/Madera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Codes/Info.gd" type="Script" id=10]
+[ext_resource path="res://Graphics/UIbg.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Font/kenvector_future_thin.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Graphics/PNG/Tiles/Medieval/medieval_windmill.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/PNG/Otros/boxCrate.png" type="Texture" id=14]
+[ext_resource path="res://Rama/meteorGrey_big1.png" type="Texture" id=15]
+[ext_resource path="res://Rama/trunk_top.png" type="Texture" id=16]
+[ext_resource path="res://Rama/hudPlayer_green.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Font/kenvector_future.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Graphics/buttonLarge.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 18
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 12 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 12
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 12 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 12
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 12 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
+size = 20
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font" ]
+
+[sub_resource type="DynamicFont" id=5]
+
+size = 16
+outline_size = 0
+outline_color = Color( 1, 1, 1, 1 )
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 18 )
+_sections_unfolded = [ "Font" ]
+
+[node name="Node" type="Node"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 351.161, 372.624 ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 14.6177, -15.2283 )
+script = ExtResource( 1 )
+camera_speed = 500
+
+[node name="camera" type="Camera2D" parent="Node2D"]
+position = Vector2( 588.907, 358.866 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1.4, 1.4 )
+limit_left = 0
+limit_top = 0
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit" ]
+
+[node name="Tilemaps" type="Node2D" parent="."]
+editor/display_folded = true
+z_index = -20
+_sections_unfolded = [ "Z Index" ]
+
+[node name="terrain" type="TileMap" parent="Tilemaps"]
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 60, 104 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65537, 0, 0, -131071, 0, 0, -131069, 0, 0, -131067, 0, 0, -131065, 0, 0, -2, 0, 0, -65536, 0, 0, -65534, 0, 0, -65532, 0, 0, -65530, 0, 0, -65528, 0, 0, -65526, 0, 0, -65524, 0, 0, -65522, 0, 0, -65520, 0, 0, -65518, 0, 0, -65516, 0, 0, -65514, 0, 0, -65512, 0, 0, 65535, 0, 0, 1, 0, 0, 3, 0, 0, 5, 0, 0, 7, 0, 0, 9, 0, 0, 11, 4, 0, 13, 5, 0, 15, 6, 0, 17, 6, 0, 19, 0, 0, 21, 0, 0, 23, 0, 0, 25, 0, 0, 131070, 0, 0, 65536, 0, 0, 65538, 0, 0, 65540, 0, 0, 65542, 0, 0, 65544, 0, 0, 65546, 1, 0, 65548, 5, 0, 65550, 4, 0, 65552, 3, 0, 65554, 6, 0, 65556, 6, 0, 65558, 0, 0, 65560, 0, 0, 65562, 0, 0, 196605, 3, 0, 196607, 0, 0, 131073, 0, 0, 131075, 0, 0, 131077, 0, 0, 131079, 0, 0, 131081, 4, 0, 131083, 0, 0, 131085, 5, 0, 131087, 0, 0, 131089, 0, 0, 131091, 4, 0, 131093, 6, 0, 131095, 0, 0, 131097, 0, 0, 262140, 0, 0, 262142, 2, 0, 196608, 0, 0, 196610, 0, 0, 196612, 0, 0, 196614, 0, 0, 196616, 0, 0, 196618, 4, 0, 196620, 0, 0, 196622, 0, 0, 196624, 0, 0, 196626, 4, 0, 196628, 0, 0, 196630, 0, 0, 196632, 0, 0, 327677, 0, 0, 327679, 0, 0, 262145, 0, 0, 262147, 0, 0, 262149, 0, 0, 262151, 0, 0, 262153, 4, 0, 262155, 0, 0, 262157, 0, 0, 262159, 0, 0, 262161, 2, 0, 262163, 0, 0, 262165, 0, 0, 262167, 0, 0, 262169, 0, 0, 393214, 0, 0, 327680, 0, 0, 327682, 0, 0, 327684, 0, 0, 327686, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327692, 0, 0, 327694, 0, 0, 327696, 0, 0, 327697, 4, 0, 327698, 0, 0, 327700, 0, 0, 327702, 0, 0, 327704, 0, 0, 458751, 0, 0, 393217, 0, 0, 393219, 0, 0, 393221, 0, 0, 393223, 0, 0, 393225, 0, 0, 393227, 4, 0, 393229, 3, 0, 393231, 1, 0, 393233, 0, 0, 393235, 0, 0, 393237, 0, 0, 393239, 0, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Edificios" type="Node2D" parent="."]
+editor/display_folded = true
+z_index = -1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="House" parent="Edificios" instance=ExtResource( 3 )]
+editor/display_folded = true
+position = Vector2( 780, 420 )
+z_index = 0
+precio = 200
+desc = ""
+
+[node name="Payer" parent="Edificios/House" instance=ExtResource( 4 )]
+position = Vector2( 0, 178 )
+scale = Vector2( 0.2, 0.2 )
+z_index = 1
+motion/sync_to_physics = false
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Castillo" parent="Edificios" instance=ExtResource( 5 )]
+position = Vector2( 840, 312 )
+production = 1
+
+[node name="House2" parent="Edificios" instance=ExtResource( 3 )]
+position = Vector2( 900, 416 )
+z_index = 0
+precio = 200
+desc = ""
+
+[node name="House3" parent="Edificios" instance=ExtResource( 3 )]
+position = Vector2( 660, 208 )
+z_index = 0
+precio = 200
+desc = ""
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+margin_left = -346.0
+margin_right = 346.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Oro" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource( 6 )]
+anchor_right = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 170.0
+margin_bottom = 45.0
+
+[node name="Gente" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource( 7 )]
+anchor_right = 0.0
+margin_left = 174.0
+margin_top = 0.0
+margin_right = 344.0
+margin_bottom = 45.0
+
+[node name="Piedra" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource( 8 )]
+anchor_right = 0.0
+margin_left = 348.0
+margin_top = 0.0
+margin_right = 518.0
+margin_bottom = 45.0
+
+[node name="Madera" parent="CanvasLayer/Control/VBoxContainer" instance=ExtResource( 9 )]
+anchor_right = 0.0
+margin_left = 522.0
+margin_top = 0.0
+margin_right = 692.0
+margin_bottom = 45.0
+
+[node name="Builds_Selector" type="Control" parent="CanvasLayer"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 10 )
+
+[node name="Build" type="NinePatchRect" parent="CanvasLayer/Builds_Selector"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -209.5
+margin_top = -91.0
+margin_right = 209.5
+margin_bottom = 91.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+
+[node name="bg" type="ColorRect" parent="CanvasLayer/Builds_Selector/Build"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 159.0
+margin_bottom = 182.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.75, 0.433296, 0.348633, 1 )
+
+[node name="comprar" parent="CanvasLayer/Builds_Selector/Build" instance=ExtResource( 6 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -220.0
+margin_top = -65.0
+margin_right = -50.0
+margin_bottom = -20.0
+
+[node name="nombre" type="Label" parent="CanvasLayer/Builds_Selector/Build"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 21.0
+margin_top = 158.0
+margin_right = 142.0
+margin_bottom = 179.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Granja"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/Builds_Selector/Build"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 13 )
+stretch_mode = 0
+
+[node name="desc" type="Label" parent="CanvasLayer/Builds_Selector/Build"]
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 172.0
+margin_top = 13.0
+margin_right = 407.0
+margin_bottom = 141.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Hola Mundo ihhfeirlnf hwefrinfei rfiewnrfioefh erfioenfruierf owebfrnouewbfnoie foeuwbfioenrfoe foenrfoienrf efrobewofineh rfoei"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="nov_iz" type="Button" parent="CanvasLayer/Builds_Selector/Build"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -34.0
+margin_top = 68.0
+margin_right = -2.0
+margin_bottom = 99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+
+[node name="nov_der" type="Button" parent="CanvasLayer/Builds_Selector/Build"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 417.0
+margin_top = 70.0
+margin_right = 449.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+
+[node name="costos" type="GridContainer" parent="CanvasLayer/Builds_Selector/Build"]
+editor/display_folded = true
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = -224.0
+margin_top = 20.0
+margin_right = -40.0
+margin_bottom = 104.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 2
+
+[node name="Piedra" type="NinePatchRect" parent="CanvasLayer/Builds_Selector/Build/costos"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 90.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 90, 40 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/Builds_Selector/Build/costos/Piedra"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 11.0
+margin_right = 39.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Builds_Selector/Build/costos/Piedra"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 43.0
+margin_top = 14.0
+margin_right = 83.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "-100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Madera" type="NinePatchRect" parent="CanvasLayer/Builds_Selector/Build/costos"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 94.0
+margin_right = 184.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 90, 40 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/Builds_Selector/Build/costos/Madera"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 11.0
+margin_right = 39.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Builds_Selector/Build/costos/Madera"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 43.0
+margin_top = 14.0
+margin_right = 83.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "-100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Gente" type="NinePatchRect" parent="CanvasLayer/Builds_Selector/Build/costos"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 44.0
+margin_right = 90.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 85, 40 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="icon" type="TextureRect" parent="CanvasLayer/Builds_Selector/Build/costos/Gente"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 15.0
+margin_top = 11.0
+margin_right = 39.0
+margin_bottom = 31.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 17 )
+expand = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Builds_Selector/Build/costos/Gente"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 43.0
+margin_top = 14.0
+margin_right = 83.0
+margin_bottom = 28.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "-100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="hover" type="Node2D" parent="CanvasLayer"]
+editor/display_folded = true
+position = Vector2( -1008.8, 241.119 )
+
+[node name="spr" type="Sprite" parent="CanvasLayer/hover"]
+self_modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 480, -195.678 )
+scale = Vector2( 3, 0.393939 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="nombre" type="Label" parent="CanvasLayer/hover"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 93.0
+margin_top = -182.0
+margin_right = 868.0
+margin_bottom = -159.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "NombreEdificio"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Build" type="TextureButton" parent="CanvasLayer"]
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 12.0
+margin_right = 157.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 19 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="CanvasLayer/Build"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.5
+margin_top = -9.0
+margin_right = 54.5
+margin_bottom = 9.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Construir"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts/font" ]
+
+[connection signal="gui_input" from="CanvasLayer/Builds_Selector/Build/comprar" to="CanvasLayer/Builds_Selector" method="_on_comprar_gui_input"]
+[connection signal="pressed" from="CanvasLayer/Builds_Selector/Build/nov_iz" to="CanvasLayer/Builds_Selector" method="_on_nov_iz_pressed"]
+[connection signal="pressed" from="CanvasLayer/Builds_Selector/Build/nov_der" to="CanvasLayer/Builds_Selector" method="_on_nov_der_pressed"]
+[connection signal="pressed" from="CanvasLayer/Build" to="CanvasLayer/Builds_Selector" method="_on_Build_pressed"]

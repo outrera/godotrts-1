@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Builds/build.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Builds/Casa/House.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/PNG/Tiles/Medieval/medieval_house.png" type="Texture" id=3]
+
+[node name="House" groups=[
+"House",
+] instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+level = 1
+precio = 100
+desc = "Esto es una casa para alguien."
+coste_gente = 3
+coste_piedra = -50
+coste_madera = -50
+production = 0
+wolkers = 0
+
+[node name="spr" parent="build" index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="time_production" parent="." index="1"]
+
+wait_time = 30.0
+
+[node name="Container" parent="." index="4"]
+
+editor/display_folded = true
+
+

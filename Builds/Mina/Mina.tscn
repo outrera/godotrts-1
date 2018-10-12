@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Builds/build.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Builds/Mina/Mine.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/PNG/Tiles/Medieval/medieval_mine.png" type="Texture" id=3]
+
+[node name="Mine" groups=[
+"Mine",
+] instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+precio = 500
+desc = "Esta es la mina de Minecraft. ¡Diamantes!"
+coste_gente = -3
+coste_madera = 20
+production = 1
+
+[node name="spr" parent="build" index="0"]
+
+texture = ExtResource( 3 )
+
+
