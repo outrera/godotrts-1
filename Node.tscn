@@ -59,7 +59,7 @@ use_filter = false
 font_data = ExtResource( 17 )
 _sections_unfolded = [ "Font" ]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [ 351.161, 372.624 ],
@@ -102,6 +102,7 @@ _sections_unfolded = [ "Limit" ]
 
 [node name="Tilemaps" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 z_index = -20
 _sections_unfolded = [ "Z Index" ]
 
@@ -145,7 +146,6 @@ desc = ""
 [node name="Castillo" parent="Edificios" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 840, 312 )
-production = 1
 
 [node name="House2" parent="Edificios" index="2" instance=ExtResource( 3 )]
 
