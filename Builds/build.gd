@@ -32,7 +32,7 @@ func _draw():
 func _on_build_mouse_entered():
 #	emit_signal("click")
 #	print(get_global_mouse_position().angle_to_point($build.global_position+Vector2(60,70)))
-	global_var.mouse_en = nombre
+	#global_var.mouse_en = nombre
 	print(nombre)
 	pass
 

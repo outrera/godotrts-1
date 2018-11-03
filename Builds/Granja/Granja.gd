@@ -20,5 +20,5 @@ func _ready():
 func _process(delta):
 	if $time_production.is_stopped():
 		global_var.recursos["Oro"] -= sueldo*cant_trabajadores
-		global_var.pan += 100
+		global_var.recursos["Pan"] += 100
 		$time_production.start()

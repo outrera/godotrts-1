@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Graphics/PNG/Otros/boxCrate.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/GUI/InfoRecursos/Contenedor_elemento_info.gd" type="Script" id=2]
-[ext_resource path="res://Rama/hudCoin.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/GUI/InfoRecursos/hudCoin.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Font/kenvector_future.ttf" type="DynamicFontData" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 

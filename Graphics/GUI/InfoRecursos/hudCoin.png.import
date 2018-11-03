@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/medieval_tower.png-092d2462528903e3e46be54e4004e596.stex"
+path="res://.import/hudCoin.png-bb8eb5e7b5dc29444a6aa47d077e2e11.stex"
 
 [deps]
 
-source_file="res://Graphics/PNG/Tiles/Medieval/medieval_tower.png"
-dest_files=[ "res://.import/medieval_tower.png-092d2462528903e3e46be54e4004e596.stex" ]
+source_file="res://Graphics/GUI/InfoRecursos/hudCoin.png"
+dest_files=[ "res://.import/hudCoin.png-bb8eb5e7b5dc29444a6aa47d077e2e11.stex" ]
 
 [params]
 
@@ -16,7 +16,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
