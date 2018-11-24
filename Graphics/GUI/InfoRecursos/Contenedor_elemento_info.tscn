@@ -5,7 +5,6 @@
 [ext_resource path="res://Graphics/GUI/InfoRecursos/hudCoin.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Font/kenvector_future.ttf" type="DynamicFontData" id=4]
 
-
 [sub_resource type="DynamicFont" id=1]
 
 size = 18
@@ -37,7 +36,6 @@ _sections_unfolded = [ "Grow Direction", "Patch Margin", "Rect", "Size Flags" ]
 
 [node name="icon" type="TextureRect" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

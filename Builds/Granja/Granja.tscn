@@ -4,17 +4,17 @@
 [ext_resource path="res://Builds/Granja/Granja.gd" type="Script" id=2]
 [ext_resource path="res://Graphics/PNG/Tiles/Medieval/medieval_windmill.png" type="Texture" id=3]
 
-[node name="12" groups=[
+[node name="12" index="0" groups=[
 "Granja",
 ] instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 precio = 300
 desc = "Esta es la granja del proletariado"
+nombre = "Granja"
 coste_gente = -3
 coste_piedra = -20
 coste_madera = -40
-nombre = "Granja"
 
 [node name="spr" parent="build" index="0"]
 
